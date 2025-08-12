@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Core schema changes -->
+    <includeAll path="db/changelog/changes"
+                relativeToChangelogFile="false"
+                errorIfMissingOrEmpty="false"/>
+
+    <!-- Reference data (production-safe data) -->
+    <includeAll path="db/changelog/data/reference"
+                relativeToChangelogFile="false"
+                errorIfMissingOrEmpty="false"/>
+
+    <!-- Test/Development data (only in non-prod environments) -->
+    <includeAll path="db/changelog/data/test"
+                relativeToChangelogFile="false"
+                errorIfMissingOrEmpty="false"
+                context="dev,test"/>
+
+</databaseChangeLog>

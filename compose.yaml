@@ -1,0 +1,16 @@
+# docker-compose.yml
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: concertlog-postgres
+    environment:
+      - 'POSTGRES_DB=concertlog'
+      - 'POSTGRES_USER=concertlog_user'
+      - 'POSTGRES_PASSWORD=concertlog_dev_password'
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
