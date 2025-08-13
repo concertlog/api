@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="001-insert-oauth-providers" author="dylfrancis">
+        <comment>Insert default OAuth providers</comment>
+
+        <insert tableName="oauth_providers">
+            <column name="name" value="google"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+        <insert tableName="oauth_providers">
+            <column name="name" value="apple"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+        <insert tableName="oauth_providers">
+            <column name="name" value="spotify"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
